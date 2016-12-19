@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-content">
+    <div class="row">
+      <form class="col s12" name="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="name" type="text"
+                   class="validate"
+                   required
+                   [(ngModel)]="contact.name"
+                   name="name">
+            <label for="name" [ngClass]="{'active': contact.name && contact.name!=''}">Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="lastName"
+                   type="text"
+                   class="validate"
+                   required [(ngModel)]="contact.lastName"
+                   name="lastName">
+            <label for="lastName" [ngClass]="{'active': contact.lastName && contact.lastName!=''}">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phoneNumber"
+                   type="text"
+                   class="validate active"
+                   [(ngModel)]="contact.phoneNumber"
+                   name="phoneNumber">
+            <label for="phoneNumber" [ngClass]="{'active': contact.phoneNumber && contact.phoneNumber!=''}">
+              Phone Number
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email"
+                   type="email"
+                   class="validate"
+                   [(ngModel)]="contact.email"
+                   name="email">
+            <label for="email" [ngClass]="{'active': contact.email}">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="age"
+                   type="number"
+                   min="0" max="100"
+                   class="validate"
+                   [(ngModel)]="contact.age"
+                   name="age">
+            <label for="age" [ngClass]="{'active': contact.age}">Age</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+                [ngClass]="{'disabled': !contactForm.form.valid}">
+          Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

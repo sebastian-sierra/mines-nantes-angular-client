@@ -1,0 +1,8 @@
+<nav>
+  <div class="nav-wrapper teal">
+    <div class="col s12">
+      <a routerLink="/contacts" class="breadcrumb">Contacts</a>
+      <a routerLink="/edit" class="breadcrumb" [ngClass]="{'hide': !router.isActive('/edit')}">Edit</a>
+    </div>
+  </div>
+</nav>

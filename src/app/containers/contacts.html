@@ -1,0 +1,9 @@
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let contact of contacts" (click)="setContact(contact)">
+    <i class="material-icons circle teal">perm_identity</i>
+    <span class="title">{{contact.name}} {{contact.lastName}}</span>
+  </li>
+</ul>
+<div class="right">
+  <a class="btn-floating btn-large waves-effect waves-light teal" routerLink="/edit"><i class="material-icons">add</i></a>
+</div>

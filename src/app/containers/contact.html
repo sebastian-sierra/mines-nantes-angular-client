@@ -1,0 +1,16 @@
+<div class="card" *ngIf="contact">
+  <div class="card-content">
+    <span class="card-title teal-text">{{contact.name}} {{contact.lastName}}</span>
+    <div class="center-align">
+      <h5>Name: {{contact.name}}</h5>
+      <h5>Last Name: {{contact.lastName}}</h5>
+      <h5 *ngIf="contact.phoneNumber">Phone Number: {{contact.phoneNumber}}</h5>
+      <h5 *ngIf="contact.email">Email: {{contact.email}}</h5>
+      <h5 *ngIf="contact.age">Age: {{contact.age}}</h5>
+    </div>
+  </div>
+  <div class="card-action">
+    <a routerLink="/edit/{{contact._id}}" class="teal-text">Edit</a>
+    <a (click)="delete(contact._id)" class="teal-text">Delete</a>
+  </div>
+</div>
